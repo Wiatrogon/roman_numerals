@@ -1,4 +1,4 @@
-from src.to_roman import to_roman
+from src.converter import to_roman
 
 
 def test_single_digit_solutions():
