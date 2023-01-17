@@ -19,6 +19,12 @@ def to_roman(number: int) -> str:
 
 
 def from_roman(number: str) -> int:
+    # strip thousands
+    thousands = 0
+    while number.startswith("M"):
+        thousands += 1000
+        number = number[1:]
+
     # strip hundreds
     hundreds = 0
     if number.startswith("CM"):
@@ -53,4 +59,4 @@ def from_roman(number: str) -> int:
 
     ones = _ones.index(number)
 
-    return hundreds + tens + ones
+    return thousands + hundreds + tens + ones

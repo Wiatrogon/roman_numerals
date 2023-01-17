@@ -49,3 +49,12 @@ def test_three_digit_solutions():
     assert from_roman("DCCCLXXXVIII") == 888
     assert from_roman("CM") == 900
     assert from_roman("CMXCIX") == 999
+
+
+def test_four_digit_solutions():
+    assert from_roman("M") == 1000
+    assert from_roman("MI") == 1001
+    assert from_roman("MMXX") == 2020
+    assert from_roman("MMMCCC") == 3300
+    assert from_roman("MCCCXXXVII") == 1337
+    assert from_roman("MCMLXXXVIII") == 1988
