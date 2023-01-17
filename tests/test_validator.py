@@ -14,9 +14,9 @@ def test_single_character_valid_roman_numeral(number):
 
 
 @pytest.mark.parametrize("number", ["IV", "IX", "VI", "XI", "XV", "XL", "XC",
-                                    "LI", "LV", "LX", "CI", "CV", "CL", "CD",
-                                    "CM", "DI", "DV", "DX", "DL", "DC", "MI",
-                                    "MV", "MX", "ML", "MC", "MD", "MM"])
+                                    "LI", "LV", "LX", "CI", "CV", "CL", "CC",
+                                    "CD", "CM", "DI", "DV", "DX", "DL", "DC",
+                                    "MI", "MV", "MX", "ML", "MC", "MD", "MM"])
 def test_two_characters_valid_roman_numerals(number):
     assert is_valid(number) is True
 
@@ -44,6 +44,7 @@ def test_three_characters_valid_roman_numerals(number):
 
 @pytest.mark.parametrize("number", ["IIV", "IIX", "IIL", "IIC", "IID", "IIM",
                                     "IVI", "IXI", "ILI", "ICI", "IDI", "IMI",
-                                    "VVI", "LLI", "LLX", "DDI", "DDX", "DDC"])
+                                    "VVI", "LLI", "LLX", "DDI", "DDX", "DDC",
+                                    "XXL", "XLX", "XMC", "CCD", "CCM", "CMM"])
 def test_three_characters_invalid_roman_numerals(number):
     assert is_valid(number) is False
