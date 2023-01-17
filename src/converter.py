@@ -19,9 +19,24 @@ def to_roman(number: int) -> str:
 
 
 def from_roman(number: str) -> int:
-    tens = 0
+    # strip hundreds
+    hundreds = 0
+    if number.startswith("CM"):
+        hundreds += 900
+        number = number[2:]
+    elif number.startswith("CD"):
+        hundreds += 400
+        number = number[2:]
+    elif number.startswith("D"):
+        hundreds += 500
+        number = number[1:]
+
+    while number.startswith("C"):
+        hundreds += 100
+        number = number[1:]
 
     # strip tens
+    tens = 0
     if number.startswith("XC"):
         tens += 90
         number = number[2:]
@@ -38,4 +53,4 @@ def from_roman(number: str) -> int:
 
     ones = _ones.index(number)
 
-    return tens + ones
+    return hundreds + tens + ones

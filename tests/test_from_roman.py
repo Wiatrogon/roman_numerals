@@ -12,6 +12,7 @@ def test_single_digit_solutions():
     assert from_roman("II") == 2
     assert from_roman("I") == 1
 
+
 def test_two_digit_solutions():
     assert from_roman("X") == 10
     assert from_roman("XI") == 11
@@ -27,3 +28,24 @@ def test_two_digit_solutions():
     assert from_roman("LXXXVIII") == 88
     assert from_roman("XC") == 90
     assert from_roman("XCIX") == 99
+
+
+def test_three_digit_solutions():
+    assert from_roman("C") == 100
+    assert from_roman("CI") == 101
+    assert from_roman("CX") == 110
+    assert from_roman("CXI") == 111
+    assert from_roman("CC") == 200
+    assert from_roman("CCXXII") == 222
+    assert from_roman("CCC") == 300
+    assert from_roman("CCCXXXIII") == 333
+    assert from_roman("CD") == 400
+    assert from_roman("CDXLIV") == 444
+    assert from_roman("D") == 500
+    assert from_roman("DLV") == 555
+    assert from_roman("DC") == 600
+    assert from_roman("DCLXVI") == 666
+    assert from_roman("DCCLXXVII") == 777
+    assert from_roman("DCCCLXXXVIII") == 888
+    assert from_roman("CM") == 900
+    assert from_roman("CMXCIX") == 999
