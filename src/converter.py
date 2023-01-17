@@ -19,4 +19,23 @@ def to_roman(number: int) -> str:
 
 
 def from_roman(number: str) -> int:
-    return _ones.index(number)
+    tens = 0
+
+    # strip tens
+    if number.startswith("XC"):
+        tens += 90
+        number = number[2:]
+    elif number.startswith("XL"):
+        tens += 40
+        number = number[2:]
+    elif number.startswith("L"):
+        tens += 50
+        number = number[1:]
+
+    while number.startswith("X"):
+        tens += 10
+        number = number[1:]
+
+    ones = _ones.index(number)
+
+    return tens + ones
