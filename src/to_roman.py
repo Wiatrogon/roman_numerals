@@ -8,4 +8,6 @@ def to_roman(number: int) -> str:
     hundreds = (number % 1000) // 100
     hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"][hundreds]
 
-    return f"{hundreds}{tens}{ones}"
+    thousands = "M" * (number // 1000)
+
+    return f"{thousands}{hundreds}{tens}{ones}"

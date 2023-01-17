@@ -7,6 +7,7 @@ def test_single_digit_solutions():
     assert to_roman(10) == "X"
     assert to_roman(50) == "L"
     assert to_roman(100) == "C"
+    assert to_roman(1000) == "M"
 
 
 def test_two_digit_solutions():
@@ -27,6 +28,9 @@ def test_two_digit_solutions():
     assert to_roman(400) == "CD"
     assert to_roman(600) == "DC"
     assert to_roman(900) == "CM"
+    assert to_roman(1001) == "MI"
+    assert to_roman(1010) == "MX"
+    assert to_roman(2000) == "MM"
 
 
 def test_multiple_digit_solutions():
@@ -46,3 +50,5 @@ def test_multiple_digit_solutions():
     assert to_roman(666) == "DCLXVI"
     assert to_roman(888) == "DCCCLXXXVIII"
     assert to_roman(999) == "CMXCIX"
+    assert to_roman(1337) == "MCCCXXXVII"
+    assert to_roman(2077) == "MMLXXVII"
